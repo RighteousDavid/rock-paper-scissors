@@ -1,8 +1,4 @@
-let computerChoice = "";
-let playerChoice = "";
-let roundCount = 0;
-let playerScore = 0;
-let computerScore = 0;
+let computerChoice, playerChoice, roundCount, playerScore, computerScore;
 
 const CHOICES = ["rock", "paper", "scissors"];
 const numChoices = CHOICES.length;
@@ -31,12 +27,7 @@ function getPlayerChoice() {
   return playerChoice;
 }
 
-function playRound() {
-  getPlayerChoice();
-  getComputerChoice();
-  console.log("computer choice is: " + computerChoice);
-  console.log("player choice is: " + playerChoice);
-
+function playRound(playerChoice, computerChoice) {
   if (playerChoice === computerChoice) {
     playerScore;
     roundCount++;
@@ -63,19 +54,19 @@ function playRound() {
 }
 
 function playGame() {
+  computerChoice = "";
+  playerChoice = "";
   roundCount = 0;
   playerScore = 0;
   computerScore = 0;
-
   while (playerScore != 3 && computerScore != 3) {
-    console.log(`Current Round: ${roundCount}`);
-    playRound();
+    playRound(getPlayerChoice(), getComputerChoice());
   }
-  if (playerScore > computerScore) {
-    console.log(`Congrats! You win ${playerScore} to ${computerScore}`);
-  } else {
-    console.log(`Booo! You lost ${computerScore} to ${playerScore}`);
-  }
+  playerScore > computerScore
+    ? console.log(
+        `Congrats! You won the game ${playerScore} to ${computerScore}`
+      )
+    : console.log(`Boo... You lost ${computerScore} to ${playerScore}`);
 }
 
 playGame();
