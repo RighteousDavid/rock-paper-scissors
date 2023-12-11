@@ -59,7 +59,7 @@ function playGame() {
   roundCount = 0;
   playerScore = 0;
   computerScore = 0;
-  while (playerScore != 3 && computerScore != 3) {
+  while (playerScore != -1 && computerScore != -1) {
     playRound(getPlayerChoice(), getComputerChoice());
   }
   playerScore > computerScore
