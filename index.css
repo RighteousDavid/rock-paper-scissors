@@ -7,6 +7,12 @@
     box-sizing: border-box;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
 /* Prevent font size inflation */
 html {
     -moz-text-size-adjust: none;
@@ -94,4 +100,193 @@ textarea:not([rows]) {
 
 /* CSS custom variables */
 
-:root {}
+:root {
+
+    --clr-green-100: hsl(94, 6%, 44%);
+    --clr-green-200: hsl(92, 8%, 36%);
+    --clr-green-300: hsl(90, 35%, 70%);
+    --clr-green-400: hsl(90, 18%, 20%);
+    --clr-green-500: hsl(90, 31%, 13%);
+    --clr-green-600: hsl(92, 32%, 10%);
+    --clr-green-700: hsl(88, 37%, 8%);
+    --clr-green-900: hsl(92, 42%, 6%);
+
+    --clr-yellow-100: hsl(37, 69%, 95%);
+    --clr-yellow-200: hsl(42, 70%, 77%);
+    --clr-yellow-300: hsl(42, 71%, 73%);
+    --clr-yellow-400: hsl(47, 100%, 50%);
+    --clr-yellow-500: hsl(47, 100%, 43%);
+    --clr-yellow-600: hsl(46, 100%, 32%);
+    --clr-yellow-700: hsl(46, 100%, 22%);
+    --clr-yellow-800: hsl(44, 100%, 12%);
+    --clr-yellow-900: hsl(43, 100%, 7%);
+
+    --clr-orange-100: hsl(12, 50%, 81%);
+    --clr-orange-200: hsl(12, 48%, 69%);
+    --clr-orange-300: hsl(12, 44%, 56%);
+    --clr-orange-400: hsla(32, 100%, 41%, 1);
+    --clr-orange-500: hsl(32, 100%, 37%);
+    --clr-orange-600: hsl(12, 81%, 34%);
+    --clr-orange-700: hsl(12, 86%, 25%);
+    --clr-orange-800: hsl(12, 88%, 20%);
+    --clr-orange-900: hsl(12, 90%, 16%);
+    --clr-orange-1000: hsl(10, 93%, 12%);
+
+    --clr-red-100: hsl(12, 50%, 81%);
+    --clr-red-200: hsl(12, 48%, 69%);
+    --clr-red-300: hsl(12, 44%, 56%);
+    --clr-red-400: hsl(14, 78%, 55%);
+    --clr-red-500: hsl(12, 81%, 34%);
+    --clr-red-600: hsl(12, 86%, 25%);
+    --clr-red-700: hsl(12, 88%, 20%);
+    --clr-red-800: hsl(12, 90%, 16%);
+    --clr-red-900: hsl(10, 93%, 12%);
+}
+
+@font-face {
+    font-family: "Inter";
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/Inter-Regular.woff2") format("woff2"),
+        url("/fonts/Inter-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-weight: 600;
+    font-display: swap;
+    src: url("/fonts/Inter-SemiBold.woff2") format("woff2"),
+        url("/fonts/Inter-SemiBold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-weight: 700;
+    font-display: swap;
+    src: url("/fonts/Inter-Bold.woff2") format("woff2"),
+        url("/fonts/Inter-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Basteleur";
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/Basteleur-Moonlight.woff2") format("woff2"),
+        url("/fonts/Basteleur-Moonlight.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Basteleur";
+    font-weight: 700;
+    font-display: swap;
+    src: url("/fonts/Basteleur-Bold.woff2") format("woff2"),
+        url("/fonts/Basteleur-Bold.woff") format("woff");
+}
+
+
+html {
+    font-family: "Inter";
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Basteleur";
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+body {
+    background-color: var(--clr-green-900);
+    color: var(--clr-yellow-100);
+}
+
+.container {
+    width: min(100% - 2rem, 50rem);
+    margin-inline: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section {
+    margin-block: 4rem;
+}
+
+.fs-900 {
+    font-size: 4rem;
+}
+
+.fs-700 {
+    font-size: 2rem;
+}
+
+.fs-600 {
+    font-size: 1.5rem;
+}
+
+.ff-accent {
+    font-family: "Basteleur";
+}
+
+.fw-bold {
+    font-weight: bold;
+}
+
+.flex {
+    --gap: 2rem;
+    display: flex;
+    gap: var(--flex-gap, --gap);
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.score-card {
+    padding: 2rem;
+    /* background-color: salmon; */
+    display: grid;
+
+    justify-items: center;
+    align-content: center;
+}
+
+.score-card__image {
+    height: 75px;
+    width: auto;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 0px 2px var(--clr-red-500), 0px 0px 0px 4px var(--clr-orange-400),
+        0px 0px 0px 6px var(--clr-yellow-400);
+    border-radius: 5px;
+}
+
+.flow>*:where(:not(:first-child)) {
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 2rem 3rem;
+    background-color: var(--clr-yellow-100);
+    border-radius: 20px;
+    border: 2px transparent;
+    box-shadow: 0px 0px 0px 3px var(--clr-red-500), 0px 0px 0px 6px var(--clr-orange-400),
+        0px 0px 0px 9px var(--clr-yellow-400);
+    transition: transform 75ms ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: var(--clr-green-300);
+    transform: scale(1.1);
+    transition: transform 100ms ease-in-out;
+}

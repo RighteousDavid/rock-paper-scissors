@@ -69,4 +69,4 @@ function playGame() {
     : console.log(`Boo... You lost ${computerScore} to ${playerScore}`);
 }
 
-playGame();
+// playGame();
